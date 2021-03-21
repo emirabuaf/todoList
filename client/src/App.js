@@ -21,8 +21,6 @@ function App() {
       });
   }, []);
 
-  console.log(tasks);
-
   const addTodo = () => {
     const newTodoList = tasks.concat({ text });
     setTasks(newTodoList);
@@ -35,7 +33,7 @@ function App() {
     <div className="App">
       <input type="text" value={text} onChange={handleChange} />
       <button onClick={addTodo}>Add Todo</button>
-      <TodoList tasks={tasks} />
+      <TodoList setTasks={setTasks} tasks={tasks} />
     </div>
   );
 }
