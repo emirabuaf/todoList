@@ -24,3 +24,10 @@
   width: 50%;
   margin: 0 auto;
 }
+
+.todoListInput {
+  width: 100%;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}

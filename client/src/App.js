@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TodoList from "./components/TodoList";
 import "./App.css";
-import AddTodo from "./components/AddTodo";
 import InputField from "./components/InputField";
 import Header from "./components/Header";
 
