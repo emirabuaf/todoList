@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import TodoList from "./components/TodoList";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
+import InputField from "./components/InputField";
+import Header from "./components/Header";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -22,14 +24,17 @@ function App() {
       });
   }, []);
 
-  const handleChange = (e) => {
-    setText(e.target.value);
-  };
-
   return (
     <div className="App">
-      <input type="text" value={text} onChange={handleChange} />
-      <AddTodo setTasks={setTasks} tasks={tasks} text={text} />
+      <Header />
+      <div className="inputAddTodoContainer">
+        <InputField
+          setTasks={setTasks}
+          tasks={tasks}
+          text={text}
+          setText={setText}
+        />
+      </div>
       <TodoList setTasks={setTasks} tasks={tasks} />
     </div>
   );

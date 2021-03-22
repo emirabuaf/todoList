@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddTodo = ({ tasks, setTasks, text }) => {
+const AddTodo = ({ tasks, setTasks, text, setText }) => {
   const addTodo = () => {
     let newTodo;
     const arrayOfIds = tasks.map((task) => task.id);
@@ -17,7 +17,12 @@ const AddTodo = ({ tasks, setTasks, text }) => {
       },
       body: JSON.stringify(newTodo),
     });
-    setTasks([...tasks, newTodo]);
+    if (text !== "") {
+      setTasks([...tasks, newTodo]);
+    } else {
+      return null;
+    }
+    setText("");
   };
 
   const getUniqueIdNumber = () => {
@@ -31,8 +36,12 @@ const AddTodo = ({ tasks, setTasks, text }) => {
     }
   };
   return (
-    <div>
-      <button onClick={addTodo}>Add Todo</button>
+    <div className="addTodoContainer">
+      <i
+        onClick={addTodo}
+        className="fa fa-plus"
+        style={{ color: "#666", cursor: "pointer", marginRight: "10px" }}
+      ></i>
     </div>
   );
 };

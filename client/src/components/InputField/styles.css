@@ -1,0 +1,16 @@
+.inputField {
+  width: 100%;
+  outline: none;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}

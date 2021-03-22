@@ -1,0 +1,26 @@
+.todo {
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.todo p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.editDeleteContainer {
+  display: flex;
+}
+
+.todoListContainer {
+  width: 50%;
+  margin: 0 auto;
+}

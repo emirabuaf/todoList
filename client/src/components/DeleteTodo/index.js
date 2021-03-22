@@ -16,7 +16,11 @@ const DeleteTodo = ({ tasks, setTasks, id }) => {
   };
   return (
     <div>
-      <button onClick={() => handleDelete(id)}>DeleteTodo</button>
+      <i
+        onClick={() => handleDelete(id)}
+        className=" fa fa-trash-alt delete-button"
+        style={{ color: "lightCoral", cursor: "pointer" }}
+      ></i>
     </div>
   );
 };
