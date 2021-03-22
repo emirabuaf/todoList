@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TodoList from "./components/TodoList";
 import "./App.css";
+import AddTodo from "./components/AddTodo";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -21,10 +22,6 @@ function App() {
       });
   }, []);
 
-  const addTodo = () => {
-    const newTodoList = tasks.concat({ text });
-    setTasks(newTodoList);
-  };
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -32,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <input type="text" value={text} onChange={handleChange} />
-      <button onClick={addTodo}>Add Todo</button>
+      <AddTodo setTasks={setTasks} tasks={tasks} text={text} />
       <TodoList setTasks={setTasks} tasks={tasks} />
     </div>
   );
