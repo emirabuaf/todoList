@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 
-const EditTodo = ({ setClicked, setEdit, id }) => {
+const EditTodo = ({
+  editSetClicked,
+  edit,
+  setEdit,
+  id,
+  textInput,
+  isChecked,
+}) => {
   const handleEdit = () => {
-    setEdit(true);
-    console.log(id);
-    setClicked(id);
+    if (!isChecked[id]) {
+      setEdit(true);
+    }
+    editSetClicked(id);
+    if (edit) {
+      textInput.current.focus();
+    }
   };
 
   return (
     <div>
-      <i onClick={handleEdit} className="fas fa-edit edit-button"></i>
+      <i
+        onClick={handleEdit}
+        className="fas fa-edit edit-button"
+        style={{ cursor: "pointer" }}
+      ></i>
     </div>
   );
 };

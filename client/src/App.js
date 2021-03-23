@@ -3,10 +3,12 @@ import TodoList from "./components/TodoList";
 import "./App.css";
 import InputField from "./components/InputField";
 import Header from "./components/Header";
+import Error from "./components/ErrorComponent";
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("api/tasks")
@@ -32,9 +34,16 @@ function App() {
           tasks={tasks}
           text={text}
           setText={setText}
+          setError={setError}
         />
       </div>
-      <TodoList setTasks={setTasks} tasks={tasks} />
+      {error ? <Error /> : null}
+      <TodoList
+        text={text}
+        setText={setText}
+        setTasks={setTasks}
+        tasks={tasks}
+      />
     </div>
   );
 }

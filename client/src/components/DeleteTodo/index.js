@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const DeleteTodo = ({ tasks, setTasks, id }) => {
   const handleDelete = (id) => {
@@ -19,7 +19,7 @@ const DeleteTodo = ({ tasks, setTasks, id }) => {
       <i
         onClick={() => handleDelete(id)}
         className=" fa fa-trash-alt delete-button"
-        style={{ color: "lightCoral", cursor: "pointer" }}
+        style={{ color: "lightCoral", cursor: "pointer", marginLeft: "8px" }}
       ></i>
     </div>
   );

@@ -1,0 +1,10 @@
+.errorContainer {
+  display: inline-flex;
+  align-items: center;
+  margin-top: -15px;
+}
+
+.errorMessage {
+  color: #a94442;
+  margin-left: 10px;
+}

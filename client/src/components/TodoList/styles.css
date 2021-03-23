@@ -3,7 +3,7 @@
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-bottom: 10px;
   align-items: center;
   margin-left: 10px;
   margin-right: 10px;
@@ -11,18 +11,29 @@
   border-radius: 5px;
 }
 
+.todoCompleted {
+  text-decoration: line-through;
+  background-color: rgb(85, 41, 220);
+  color: #fff;
+}
+
 .todo p {
   margin-top: 0;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .editDeleteContainer {
   display: flex;
+  width: 10%;
 }
 
 .todoListContainer {
   width: 50%;
   margin: 0 auto;
+  overflow: auto;
+  height: 400px;
 }
 
 .todoListInput {
@@ -30,4 +41,10 @@
   outline: none;
   border: 1px solid transparent;
   border-radius: 5px;
+}
+
+.inputAndTextContainer {
+  display: flex;
+  text-align: initial;
+  width: 90%;
 }
