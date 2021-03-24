@@ -14,15 +14,15 @@ const InputField = ({ tasks, setTasks, text, setText, setError }) => {
       newId = getUniqueIdNumber();
     }
     newTodo = { id: newId, text: text };
-    fetch("api/tasks", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTodo),
-    });
     if (text !== "") {
+      fetch("api/tasks", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTodo),
+      });
       setTasks([...tasks, newTodo]);
       setError(false);
     } else {
