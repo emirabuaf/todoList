@@ -57,7 +57,7 @@ const TodoList = ({ tasks, setTasks }) => {
           <Checkbox
             name={newTask.id}
             value={newTask.id}
-            checked={isChecked[newTask.id]}
+            checked={newTask.id ? isChecked : null}
             handleCheck={handleCheck}
             editClicked={editClicked}
             edit={edit}

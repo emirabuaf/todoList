@@ -10,6 +10,7 @@ const Checkbox = ({
   edit,
   id,
 }) => {
+  console.log(checked);
   return (
     <div className="checkboxContainer">
       <label className="checkbox">
@@ -17,7 +18,7 @@ const Checkbox = ({
           disabled={edit && id === editClicked ? "disabled" : null}
           value={value}
           name={name}
-          checked={checked}
+          checked={checked[id]}
           onChange={handleCheck}
           type="checkbox"
         />

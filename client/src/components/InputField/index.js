@@ -6,7 +6,7 @@ const InputField = ({ tasks, setTasks, text, setText, setError }) => {
   const handleChange = (e) => {
     setText(e.target.value);
   };
-  const addTodo = (e) => {
+  const addTodo = () => {
     let newTodo;
     const arrayOfIds = tasks.map((task) => task.id);
     let newId = getUniqueIdNumber();
@@ -25,6 +25,7 @@ const InputField = ({ tasks, setTasks, text, setText, setError }) => {
       });
       setTasks([...tasks, newTodo]);
       setError(false);
+      return newTodo;
     } else {
       setError(true);
     }
